@@ -1,27 +1,203 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>J-Ariza的点滴</title><link>http://dev-J-Ariza.github.io/</link><description>Recent content on J-Ariza的点滴</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 11 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://dev-J-Ariza.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>python实现北京公交实时查询</title><link>http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/</link><pubDate>Sun, 11 Jul 2021 00:00:00 +0000</pubDate><guid>http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/</guid><description>&lt;img src="http://dev-J-Ariza.github.io/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post python实现北京公交实时查询" />&lt;p>Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p>
-&lt;p>Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>J-Ariza的点滴</title><link>http://dev-J-Ariza.github.io/</link><description>Recent content on J-Ariza的点滴</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 11 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://dev-J-Ariza.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>python实现北京公交实时查询</title><link>http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/</link><pubDate>Sun, 11 Jul 2021 00:00:00 +0000</pubDate><guid>http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/</guid><description>&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/bus.jpg" alt="Featured image of post python实现北京公交实时查询" />&lt;h1 id="起源">起源&lt;/h1>
+&lt;p>我最近在学习python，学的过程中打算完成个小的项目。于是在网络搜索关键词“python入门项目”，在所有的结果中出现了【查询实时公交路线】这个api，个人
+感觉既简单又有些意思。 &lt;del>（谁知这个api最后早就过期了。。这也是开发过程中一个稍显麻烦的地方。）&lt;/del>&lt;/p>
+&lt;p>本文通过一下3个部分介绍实现过程，&lt;/p>
 &lt;ol>
-&lt;li>Exierant elisi ambit vivere dedere&lt;/li>
-&lt;li>Duce pollice&lt;/li>
-&lt;li>Eris modo&lt;/li>
-&lt;li>Spargitque ferrea quos palude&lt;/li>
+&lt;li>搜索（捡现成的）&lt;/li>
+&lt;li>工程结构以及具体实现&lt;/li>
+&lt;li>上传到pypi&lt;/li>
 &lt;/ol>
-&lt;p>Rursus nulli murmur; hastile inridet ut ab gravi sententia! Nomine potitus silentia flumen, sustinet placuit petis in dilapsa erat sunt. Atria tractus malis.&lt;/p>
+&lt;h2 id="搜索">搜索&lt;/h2>
+&lt;p>作为python菜鸟，还是像观摩一下前辈们的用法以及产出效果。 开发过程中我主要参考的是
+&lt;a class="link" href="https://segmentfault.com/a/1190000014324320" target="_blank" rel="noopener"
+>Python实现命令行监控北京实时公交之一&lt;/a>。
+此文涉及到网络请求，结果缓存（这个我没想到，而且作者实现的方式也很简洁），结果输出（对命令行的排版），可以看到内容还是很丰富的。&lt;/p>
+&lt;p>前面说到之前网上搜索的api不能用了，于是就开始了各种尝试，先去了各大免费api平台看有无现成的，结果自然是没有。要么就是一个小网站还要注册，还不保险。
+最后是在github上面检索到的，输入关键字 ‘beijing bus’， 并且按照 &lt;strong>时间倒叙查找&lt;/strong>， 终于找到了某位大佬的小作业，里面还有请求实时公交的过程，
+我试了一下，疗效不错。 链接在此，
+&lt;a class="link" href="https://github.com/Zoutianjian/Beijing_Bus_realtime_query" target="_blank" rel="noopener"
+>Zoutianjian/Beijing_Bus_realtime_query&lt;/a>&lt;/p>
+&lt;h2 id="工程结构以及具体实现">工程结构以及具体实现&lt;/h2>
+&lt;h3 id="项目结构">项目结构&lt;/h3>
+&lt;p>为了开发的规范性，写代码之前要设计好项目结构。对python项目来说，这个也是有规范可以依据的。
+&lt;a class="link" href="https://cloud.tencent.com/developer/article/1175298" target="_blank" rel="noopener"
+>python 软件目录结构规范&lt;/a>.
+简单来说，最外层目录是项目根目录用项目命名，在它下面建立一个同名文件夹，真正的开发代码放在这里面。&lt;/p>
+&lt;p>同级建立tests目录，存放单元测试代码。&lt;/p>
+&lt;p>同级建立 requirements.txt 里面写入所有你用到的第三方包，这样当别人clone你的项目运行时，只需要 &lt;code>pip install -r requirements.txt&lt;/code> 就可以
+安装所有需要的包了。&lt;/p>
+&lt;p>如果打算上传到pypi，则需要setup.py&lt;/p>
+&lt;p>如果用到流水线，则在项目根目录根据各种CI的要求放置配置文件，我这里用的是 .travis.yml. (这个后面也许会单独写个文章简述流水线配置，真的太烦了，
+我项目一半以上的提交用来配置流水线了。。)&lt;/p>
+&lt;pre>&lt;code>Foo(根目录，git目录)/
+|
+|-- foo(项目源码)/
+| |
+| |-- __init__.py
+| |-- main.py
+|-- tests(单元测试代码)/
+| |
+| |-- __init__.py
+| |-- test**.py
+|
+|-- docs/
+| |-- conf.py
+| |-- abc.rst
+|
+|-- setup.py
+|-- requirements.txt
+|-- README.md
+&lt;/code>&lt;/pre>
+&lt;p>最后类似长这个样子。&lt;/p>
+&lt;h3 id="项目核心代码">项目核心代码&lt;/h3>
+&lt;p>首先明确需求，当用户输入某条线路代码时，列出双向所有的站点。 如果用户进一步确认了方向，则显示这路车在这个方向上的所有车的到站情况。
+这样需要做的事情就明确了，&lt;/p>
+&lt;ul>
+&lt;li>需要请求网络部分，用来查找公交的具体情况。&lt;/li>
+&lt;li>需要缓存部分，如果用户输入间隔时间较短，就不必在请求网络。&lt;/li>
+&lt;li>需要一个对用户友好的输入输出界面，命令行也能做到。&lt;/li>
+&lt;/ul>
 &lt;ol>
-&lt;li>Comas hunc haec pietate fetum procerum dixit&lt;/li>
-&lt;li>Post torum vates letum Tiresia&lt;/li>
-&lt;li>Flumen querellas&lt;/li>
-&lt;li>Arcanaque montibus omnes&lt;/li>
-&lt;li>Quidem et&lt;/li>
+&lt;li>网络请求&lt;/li>
 &lt;/ol>
-&lt;h1 id="vagus-elidunt">Vagus elidunt&lt;/h1>
-&lt;p>&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;/p>
-&lt;p>&lt;a class="link" href="https://en.wikipedia.org/wiki/Canons_of_page_construction#Van_de_Graaf_canon" target="_blank" rel="noopener"
->The Van de Graaf Canon&lt;/a>&lt;/p>
-&lt;h2 id="mane-refeci-capiebant-unda-mulcebat">Mane refeci capiebant unda mulcebat&lt;/h2>
-&lt;p>Victa caducifer, malo vulnere contra dicere aurato, ludit regale, voca! Retorsit colit est profanae esse virescere furit nec; iaculi matertera et visa est, viribus. Divesque creatis, tecta novat collumque vulnus est, parvas. &lt;strong>Faces illo pepulere&lt;/strong> tempus adest. Tendit flamma, ab opes virum sustinet, sidus sequendo urbis.&lt;/p>
-&lt;p>Iubar proles corpore raptos vero auctor imperium; sed et huic: manus caeli Lelegas tu lux. Verbis obstitit intus oblectamina fixis linguisque ausus sperare Echionides cornuaque tenent clausit possit. Omnia putatur. Praeteritae refert ausus; ferebant e primus lora nutat, vici quae mea ipse. Et iter nil spectatae vulnus haerentia iuste et exercebat, sui et.&lt;/p>
-&lt;p>Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel &lt;strong>mitis temploque&lt;/strong> vocatus, inque alis, &lt;em>oculos nomen&lt;/em> non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem Propoetides &lt;strong>parte&lt;/strong>.&lt;/p></description></item><item><title>Chinese Test</title><link>http://dev-J-Ariza.github.io/p/test-chinese/</link><pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate><guid>http://dev-J-Ariza.github.io/p/test-chinese/</guid><description>&lt;img src="http://dev-J-Ariza.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" />&lt;h2 id="正文测试">正文测试&lt;/h2>
+&lt;p>&lt;figure style="flex-grow: 597; flex-basis: 1434px">
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615.png" data-size="1423x238">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615.png"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615_hu37807bfab18d2b33c7a4f98f374825a9_37698_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615_hu37807bfab18d2b33c7a4f98f374825a9_37698_1024x0_resize_box_2.png 1024w"
+width="1423"
+height="238"
+loading="lazy"
+alt="所有用到的接口">
+&lt;/a>
+&lt;figcaption>所有用到的接口&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>MAIN_URL1 用来获取北京市所有的公交线路。 返回的结果并不是json类型的，所以使用正则表达式&lt;code>&amp;lt;a href=&amp;quot;javascript:;&amp;quot;&amp;gt;(\\d+)&amp;lt;/a&amp;gt;&lt;/code>来提取。
+&lt;figure style="flex-grow: 406; flex-basis: 974px">
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830.png" data-size="1218x300">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830.png"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830_hu7997d9c266ced89cb17cc7b79f7758e3_29723_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830_hu7997d9c266ced89cb17cc7b79f7758e3_29723_1024x0_resize_box_2.png 1024w"
+width="1218"
+height="300"
+loading="lazy"
+alt="请求所有线路">
+&lt;/a>
+&lt;figcaption>请求所有线路&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>最后保存的结果如下图所示
+&lt;figure style="flex-grow: 104; flex-basis: 249px">
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046.png" data-size="594x571">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046.png"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046_hu7118cfc31e2ba4c649da3adf24fed982_14054_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046_hu7118cfc31e2ba4c649da3adf24fed982_14054_1024x0_resize_box_2.png 1024w"
+width="594"
+height="571"
+loading="lazy"
+alt="bus.txt">
+&lt;/a>
+&lt;figcaption>bus.txt&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;hr>
+&lt;p>LINE_URL 用来获取某条路线的所有站点。 但是在请求网络之前，我们先判断用户对同一线路的请求间隔是否在24h以内，如果是，那么就从缓存中取出站点信息。
+&lt;figure style="flex-grow: 353; flex-basis: 848px">
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205.png" data-size="1007x285">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205.png"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205_hu0470b50709489b5b09a96e819d18b698_25831_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205_hu0470b50709489b5b09a96e819d18b698_25831_1024x0_resize_box_2.png 1024w"
+width="1007"
+height="285"
+loading="lazy"
+alt="读取缓存">
+&lt;/a>
+&lt;figcaption>读取缓存&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>这个接口返回的数据是json类型，直接使用python自带的json包进行解析即可，这里注意，要保存住&lt;code>lineid&lt;/code>, &lt;code>linename&lt;/code>等关键信息，因为后面的实时查询接口要用到。
+&lt;figure style="flex-grow: 399; flex-basis: 957px">
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709.png" data-size="1265x317">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709.png"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709_hu03fe7d7569fa5113185ef7701f7d4846_36409_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709_hu03fe7d7569fa5113185ef7701f7d4846_36409_1024x0_resize_box_2.png 1024w"
+width="1265"
+height="317"
+loading="lazy"
+alt="获取站点信息">
+&lt;/a>
+&lt;figcaption>获取站点信息&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;hr>
+&lt;p>接下来就是让用户输入方向，最后输出这个方向上的所有站点并保存。 这里用到了 STATION_URL，这个接口是需要传入请求参数的。
+&lt;figure style="flex-grow: 344; flex-basis: 827px">
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850.png" data-size="1024x297">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850.png"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850_hua6de685b1456931db90217e7da11c473_28752_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850_hua6de685b1456931db90217e7da11c473_28752_1024x0_resize_box_2.png 1024w"
+width="1024"
+height="297"
+loading="lazy"
+alt="获取单向站点信息">
+&lt;/a>
+&lt;figcaption>获取单向站点信息&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>最终保存的结果如下，
+&lt;figure style="flex-grow: 90; flex-basis: 216px">
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011.png" data-size="929x1029">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011.png"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011_hu9e3ba0f3e85e2a5fa7dc16a44b98e977_57833_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011_hu9e3ba0f3e85e2a5fa7dc16a44b98e977_57833_1024x0_resize_box_2.png 1024w"
+width="929"
+height="1029"
+loading="lazy"
+alt="all_station.txt">
+&lt;/a>
+&lt;figcaption>all_station.txt&lt;/figcaption>
+&lt;/figure>
+其中，time字段是保存时间用来判断是否读缓存； line_ids是这条路线双向的路线编码； data里面保存的就是某条方向中的站点列表，每个站点实体都需要记录
+&lt;code>stationId&lt;/code>, &lt;code>stopNumber&lt;/code> 信息，同样是为了后续的实时查询使用&lt;/p>
+&lt;hr>
+&lt;p>最后，REAL_TIME_URL 负责查看某条公交线路的实时情况。&lt;/p>
+&lt;p>这个接口的请求参数需要token，打开 &lt;a href="http://www.bjbus.com/home/fun_rtbus.php?uSec=00000160&amp;amp;uSub=00000162">http://www.bjbus.com/home/fun_rtbus.php?uSec=00000160&amp;amp;uSub=00000162&lt;/a>&lt;br>
+可以通过F12或者抓包等各种方法得到。 为了输出所有正在运行中的公交，我们将待查询的站点硬编码为这个方向上的最后一站，这样在这个
+接口的返回结果里面，就会包括前面各站的到站信息，也就是是否有车在周围。
+&lt;figure style="flex-grow: 169; flex-basis: 407px">
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927.png" data-size="1302x767">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927.png"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927_hu37d0985520172e708c48b0e1a988fe9d_79421_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927_hu37d0985520172e708c48b0e1a988fe9d_79421_1024x0_resize_box_2.png 1024w"
+width="1302"
+height="767"
+loading="lazy"
+alt="实时公交请求方法">
+&lt;/a>
+&lt;figcaption>实时公交请求方法&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h3 id="命令行输出结果">命令行输出结果&lt;/h3>
+&lt;p>命令行的结果也是可以有颜色的！ 我们引入 colorama 这个包，来上色。 其中红色的站点表示此站有车，如果你不在的话就会错过。
+&lt;figure style="flex-grow: 102; flex-basis: 247px">
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus.png" data-size="689x669">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus.png"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus_hue39bfa88bbbeb89743d398e519e74bd5_18249_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus_hue39bfa88bbbeb89743d398e519e74bd5_18249_1024x0_resize_box_2.png 1024w"
+width="689"
+height="669"
+loading="lazy"
+alt="效果图1">
+&lt;/a>
+&lt;figcaption>效果图1&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>另外，python也可以输出程序中定义好的__doc__. 可以看一下项目源码。&lt;/p>
+&lt;h2 id="打包上传到pypi">打包上传到pypi&lt;/h2>
+&lt;p>这一步的产出结果可以让所有python开发者都可以使用你的代码，只需要进行标准的pip install.&lt;/p>
+&lt;p>上传也是通过python命令行进行的，因此需要做一些准备工作。具体可以搜索一下。
+我在这一步遇到了一些问题，就是项目中的txt文件传不上去。 折腾了半天，在StackOverflow上面找到了答案。 在 MANIFEST.in 文件里面写入你需要的txt，
+并且在 setup.py 中， include_package_data=True。&lt;/p>
+&lt;p>希望大家这一步会很顺利。&lt;/p>
+&lt;h2 id="使用">使用&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>在命令行中 &lt;code>pip install moniter-bus-peking&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在项目里面， &lt;code>from moniter_bus import bus&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>查找公交站点 &lt;code>bus.get_station(509)&lt;/code> 509可以换成其他路线。&lt;/p>
+&lt;p>查找实时公交 &lt;code>bus.get_real_time_bus(509)&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>直接在命令行中按照提示输入方向，就可以看到结果。&lt;/p>
+&lt;h1 id="结尾">结尾&lt;/h1>
+&lt;p>欢迎 pip install.&lt;/p>
+&lt;p>欢迎到repo里面提issue， &lt;a class="link" href="https://github.com/dev-J-Ariza/moniter_bus" target="_blank" rel="noopener"
+>项目源码&lt;/a>&lt;/p>
+&lt;p>感谢开源世界，
+&lt;a class="link" href="https://segmentfault.com/a/1190000014324320" target="_blank" rel="noopener"
+>Python实现命令行监控北京实时公交之一&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://github.com/Zoutianjian/Beijing_Bus_realtime_query" target="_blank" rel="noopener"
+>Zoutianjian/Beijing_Bus_realtime_query&lt;/a>&lt;/p>
+&lt;p>&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;/p></description></item><item><title>Chinese Test</title><link>http://dev-J-Ariza.github.io/p/test-chinese/</link><pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate><guid>http://dev-J-Ariza.github.io/p/test-chinese/</guid><description>&lt;img src="http://dev-J-Ariza.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" />&lt;h2 id="正文测试">正文测试&lt;/h2>
 &lt;p>而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 我们不得不面对一个非常尴尬的事实，那就是， 可是，即使是这样，学生会退会的出现仍然代表了一定的意义。 学生会退会，发生了会如何，不发生又会如何。 经过上述讨论， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 学生会退会，到底应该如何实现。 这样看来， 在这种困难的抉择下，本人思来想去，寝食难安。 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 就我个人来说，学生会退会对我的意义，不能不说非常重大。 莎士比亚曾经提到过，人的一生是短的，但如果卑劣地过这一生，就太长了。这似乎解答了我的疑惑。 莫扎特说过一句富有哲理的话，谁和我一样用功，谁就会和我一样成功。这启发了我， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 学生会退会，到底应该如何实现。 一般来说， 从这个角度来看， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 在这种困难的抉择下，本人思来想去，寝食难安。 了解清楚学生会退会到底是一种怎么样的存在，是解决一切问题的关键。 一般来说， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 问题的关键究竟为何？ 而这些并不是完全重要，更加重要的问题是。&lt;/p>
 &lt;p>奥斯特洛夫斯基曾经说过，共同的事业，共同的斗争，可以使人们产生忍受一切的力量。　带着这句话，我们还要更加慎重的审视这个问题： 一般来讲，我们都必须务必慎重的考虑考虑。 既然如此， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 带着这些问题，我们来审视一下学生会退会。 我认为， 我认为， 在这种困难的抉择下，本人思来想去，寝食难安。 问题的关键究竟为何？ 每个人都不得不面对这些问题。 在面对这种问题时， 要想清楚，学生会退会，到底是一种怎么样的存在。 我认为， 既然如此， 每个人都不得不面对这些问题。 在面对这种问题时， 那么， 我认为， 学生会退会因何而发生。&lt;/p>
 &lt;h2 id="引用">引用&lt;/h2>
