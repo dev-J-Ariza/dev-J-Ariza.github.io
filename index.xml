@@ -62,7 +62,7 @@
 &lt;/ol>
 &lt;p>&lt;figure style="flex-grow: 597; flex-basis: 1434px">
 &lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615.png" data-size="1423x238">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615_hu37807bfab18d2b33c7a4f98f374825a9_37698_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615_hu37807bfab18d2b33c7a4f98f374825a9_37698_1024x0_resize_box_2.png 1024w"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615_hu37807bfab18d2b33c7a4f98f374825a9_37698_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615_hu37807bfab18d2b33c7a4f98f374825a9_37698_1024x0_resize_box_3.png 1024w"
 width="1423"
 height="238"
 loading="lazy"
@@ -73,7 +73,7 @@ alt="所有用到的接口">
 &lt;p>MAIN_URL1 用来获取北京市所有的公交线路。 返回的结果并不是json类型的，所以使用正则表达式&lt;code>&amp;lt;a href=&amp;quot;javascript:;&amp;quot;&amp;gt;(\\d+)&amp;lt;/a&amp;gt;&lt;/code>来提取。
 &lt;figure style="flex-grow: 406; flex-basis: 974px">
 &lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830.png" data-size="1218x300">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830_hu7997d9c266ced89cb17cc7b79f7758e3_29723_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830_hu7997d9c266ced89cb17cc7b79f7758e3_29723_1024x0_resize_box_2.png 1024w"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830_hu7997d9c266ced89cb17cc7b79f7758e3_29723_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830_hu7997d9c266ced89cb17cc7b79f7758e3_29723_1024x0_resize_box_3.png 1024w"
 width="1218"
 height="300"
 loading="lazy"
@@ -84,7 +84,7 @@ alt="请求所有线路">
 &lt;p>最后保存的结果如下图所示
 &lt;figure style="flex-grow: 104; flex-basis: 249px">
 &lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046.png" data-size="594x571">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046_hu7118cfc31e2ba4c649da3adf24fed982_14054_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046_hu7118cfc31e2ba4c649da3adf24fed982_14054_1024x0_resize_box_2.png 1024w"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046_hu7118cfc31e2ba4c649da3adf24fed982_14054_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046_hu7118cfc31e2ba4c649da3adf24fed982_14054_1024x0_resize_box_3.png 1024w"
 width="594"
 height="571"
 loading="lazy"
@@ -96,7 +96,7 @@ alt="bus.txt">
 &lt;p>LINE_URL 用来获取某条路线的所有站点。 但是在请求网络之前，我们先判断用户对同一线路的请求间隔是否在24h以内，如果是，那么就从缓存中取出站点信息。
 &lt;figure style="flex-grow: 353; flex-basis: 848px">
 &lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205.png" data-size="1007x285">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205_hu0470b50709489b5b09a96e819d18b698_25831_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205_hu0470b50709489b5b09a96e819d18b698_25831_1024x0_resize_box_2.png 1024w"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205_hu0470b50709489b5b09a96e819d18b698_25831_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205_hu0470b50709489b5b09a96e819d18b698_25831_1024x0_resize_box_3.png 1024w"
 width="1007"
 height="285"
 loading="lazy"
@@ -107,7 +107,7 @@ alt="读取缓存">
 &lt;p>这个接口返回的数据是json类型，直接使用python自带的json包进行解析即可，这里注意，要保存住&lt;code>lineid&lt;/code>, &lt;code>linename&lt;/code>等关键信息，因为后面的实时查询接口要用到。
 &lt;figure style="flex-grow: 399; flex-basis: 957px">
 &lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709.png" data-size="1265x317">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709_hu03fe7d7569fa5113185ef7701f7d4846_36409_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709_hu03fe7d7569fa5113185ef7701f7d4846_36409_1024x0_resize_box_2.png 1024w"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709_hu03fe7d7569fa5113185ef7701f7d4846_36409_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709_hu03fe7d7569fa5113185ef7701f7d4846_36409_1024x0_resize_box_3.png 1024w"
 width="1265"
 height="317"
 loading="lazy"
@@ -119,7 +119,7 @@ alt="获取站点信息">
 &lt;p>接下来就是让用户输入方向，最后输出这个方向上的所有站点并保存。 这里用到了 STATION_URL，这个接口是需要传入请求参数的。
 &lt;figure style="flex-grow: 344; flex-basis: 827px">
 &lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850.png" data-size="1024x297">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850_hua6de685b1456931db90217e7da11c473_28752_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850_hua6de685b1456931db90217e7da11c473_28752_1024x0_resize_box_2.png 1024w"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850_hua6de685b1456931db90217e7da11c473_28752_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850_hua6de685b1456931db90217e7da11c473_28752_1024x0_resize_box_3.png 1024w"
 width="1024"
 height="297"
 loading="lazy"
@@ -130,7 +130,7 @@ alt="获取单向站点信息">
 &lt;p>最终保存的结果如下，
 &lt;figure style="flex-grow: 90; flex-basis: 216px">
 &lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011.png" data-size="929x1029">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011_hu9e3ba0f3e85e2a5fa7dc16a44b98e977_57833_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011_hu9e3ba0f3e85e2a5fa7dc16a44b98e977_57833_1024x0_resize_box_2.png 1024w"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011_hu9e3ba0f3e85e2a5fa7dc16a44b98e977_57833_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011_hu9e3ba0f3e85e2a5fa7dc16a44b98e977_57833_1024x0_resize_box_3.png 1024w"
 width="929"
 height="1029"
 loading="lazy"
@@ -142,12 +142,13 @@ alt="all_station.txt">
 &lt;code>stationId&lt;/code>, &lt;code>stopNumber&lt;/code> 信息，同样是为了后续的实时查询使用&lt;/p>
 &lt;hr>
 &lt;p>最后，REAL_TIME_URL 负责查看某条公交线路的实时情况。&lt;/p>
-&lt;p>这个接口的请求参数需要token，打开 &lt;a href="http://www.bjbus.com/home/fun_rtbus.php?uSec=00000160&amp;amp;uSub=00000162">http://www.bjbus.com/home/fun_rtbus.php?uSec=00000160&amp;amp;uSub=00000162&lt;/a>&lt;br>
+&lt;p>这个接口的请求参数需要token，打开 &lt;a class="link" href="http://www.bjbus.com/home/fun_rtbus.php?uSec=00000160&amp;amp;uSub=00000162" target="_blank" rel="noopener"
+>http://www.bjbus.com/home/fun_rtbus.php?uSec=00000160&amp;uSub=00000162&lt;/a>&lt;br>
 可以通过F12或者抓包等各种方法得到。 为了输出所有正在运行中的公交，我们将待查询的站点硬编码为这个方向上的最后一站，这样在这个
 接口的返回结果里面，就会包括前面各站的到站信息，也就是是否有车在周围。
 &lt;figure style="flex-grow: 169; flex-basis: 407px">
 &lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927.png" data-size="1302x767">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927_hu37d0985520172e708c48b0e1a988fe9d_79421_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927_hu37d0985520172e708c48b0e1a988fe9d_79421_1024x0_resize_box_2.png 1024w"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927_hu37d0985520172e708c48b0e1a988fe9d_79421_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927_hu37d0985520172e708c48b0e1a988fe9d_79421_1024x0_resize_box_3.png 1024w"
 width="1302"
 height="767"
 loading="lazy"
@@ -159,7 +160,7 @@ alt="实时公交请求方法">
 &lt;p>命令行的结果也是可以有颜色的！ 我们引入 colorama 这个包，来上色。 其中红色的站点表示此站有车，如果你不在的话就会错过。
 &lt;figure style="flex-grow: 102; flex-basis: 247px">
 &lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus.png" data-size="689x669">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus_hue39bfa88bbbeb89743d398e519e74bd5_18249_480x0_resize_box_2.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus_hue39bfa88bbbeb89743d398e519e74bd5_18249_1024x0_resize_box_2.png 1024w"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus_hue39bfa88bbbeb89743d398e519e74bd5_18249_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus_hue39bfa88bbbeb89743d398e519e74bd5_18249_1024x0_resize_box_3.png 1024w"
 width="689"
 height="669"
 loading="lazy"
@@ -248,7 +249,7 @@ alt="Photo by Hudai Gayiran on Unsplash">
 &lt;/a>
 &lt;figcaption>Photo by Hudai Gayiran on Unsplash&lt;/figcaption>
 &lt;/figure>&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-markdown" data-lang="markdown">![&lt;span class="nt">Photo by Florian Klauer on Unsplash&lt;/span>](&lt;span class="na">florian-klauer-nptLmg6jqDo-unsplash.jpg&lt;/span>) ![&lt;span class="nt">Photo by Luca Bravo on Unsplash&lt;/span>](&lt;span class="na">luca-bravo-alS7ewQ41M8-unsplash.jpg&lt;/span>)
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">![&lt;span class="nt">Photo by Florian Klauer on Unsplash&lt;/span>](&lt;span class="na">florian-klauer-nptLmg6jqDo-unsplash.jpg&lt;/span>) ![&lt;span class="nt">Photo by Luca Bravo on Unsplash&lt;/span>](&lt;span class="na">luca-bravo-alS7ewQ41M8-unsplash.jpg&lt;/span>)
 ![&lt;span class="nt">Photo by Helena Hertz on Unsplash&lt;/span>](&lt;span class="na">helena-hertz-wWZzXlDpMog-unsplash.jpg&lt;/span>) ![&lt;span class="nt">Photo by Hudai Gayiran on Unsplash&lt;/span>](&lt;span class="na">hudai-gayiran-3Od_VKcDEAA-unsplash.jpg&lt;/span>)
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>相册语法来自 &lt;a class="link" href="https://typlog.com/" target="_blank" rel="noopener"
 >Typlog&lt;/a>&lt;/p></description></item><item><title>Markdown Syntax Guide</title><link>http://dev-J-Ariza.github.io/p/markdown-syntax-guide/</link><pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate><guid>http://dev-J-Ariza.github.io/p/markdown-syntax-guide/</guid><description>&lt;img src="http://dev-J-Ariza.github.io/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" />&lt;p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p>
@@ -314,7 +315,7 @@ alt="Photo by Hudai Gayiran on Unsplash">
 &lt;/table>
 &lt;h2 id="code-blocks">Code Blocks&lt;/h2>
 &lt;h4 id="code-block-with-backticks">Code block with backticks&lt;/h4>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="cp">&amp;lt;!doctype html&amp;gt;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="cp">&amp;lt;!doctype html&amp;gt;&lt;/span>
 &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">html&lt;/span> &lt;span class="na">lang&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;en&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">charset&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;utf-8&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
@@ -337,7 +338,7 @@ alt="Photo by Hudai Gayiran on Unsplash">
 &amp;lt;/html&amp;gt;
 &lt;/code>&lt;/pre>
 &lt;h4 id="code-block-with-hugos-internal-highlight-shortcode">Code block with Hugo&amp;rsquo;s internal highlight shortcode&lt;/h4>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="cp">&amp;lt;!doctype html&amp;gt;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="cp">&amp;lt;!doctype html&amp;gt;&lt;/span>
 &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">html&lt;/span> &lt;span class="na">lang&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;en&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">charset&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;utf-8&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
@@ -486,7 +487,7 @@ cursor: pointer;
 >Auto-render Extension&lt;/a> or host these scripts locally.&lt;/li>
 &lt;li>Include the partial in your templates like so:&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">{{&lt;/span> &lt;span class="k">if&lt;/span> or .Params.math .Site.Params.math &lt;span class="o">}}&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="o">{{&lt;/span> &lt;span class="k">if&lt;/span> or .Params.math .Site.Params.math &lt;span class="o">}}&lt;/span>
 &lt;span class="o">{{&lt;/span> partial &lt;span class="s2">&amp;#34;math.html&amp;#34;&lt;/span> . &lt;span class="o">}}&lt;/span>
 &lt;span class="o">{{&lt;/span> end &lt;span class="o">}}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;ul>
@@ -510,6 +511,6 @@ $$&lt;/p></description></item><item><title>Emoji Support</title><link>http://dev
 >Emoji cheat sheet&lt;/a> is a useful reference for emoji shorthand codes.&lt;/p>
 &lt;hr>
 &lt;p>&lt;strong>N.B.&lt;/strong> The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack; e.g.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-html" data-lang="html">.emoji {
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">.emoji {
 font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
 }&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

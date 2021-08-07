@@ -1,16 +1,85 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="一个查询北京公交线路到站情况的python package"><title>python实现北京公交实时查询</title><link rel=canonical href=http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/><link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="python实现北京公交实时查询"><meta property="og:description" content="一个查询北京公交线路到站情况的python package"><meta property="og:url" content="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/"><meta property="og:site_name" content="J-Ariza的点滴"><meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Python"><meta property="article:tag" content="Python实践"><meta property="article:published_time" content="2021-07-11T00:00:00+00:00"><meta property="article:modified_time" content="2021-07-11T00:00:00+00:00"><meta property="og:image" content="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/bus.jpg"><meta name=twitter:title content="python实现北京公交实时查询"><meta name=twitter:description content="一个查询北京公交线路到站情况的python package"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/bus.jpg"></head><body class="article-page has-toc"><script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"auto")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script><div class="container main-container flex
-extended"><div id=article-toolbar><a href=http://dev-J-Ariza.github.io/ class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg><span>Back</span></a></div><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/bus_hu0a7e9efd931389e58997a1031c7ec2d4_156522_800x0_resize_q75_box.jpg srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/bus_hu0a7e9efd931389e58997a1031c7ec2d4_156522_800x0_resize_q75_box.jpg 800w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/bus_hu0a7e9efd931389e58997a1031c7ec2d4_156522_1600x0_resize_q75_box.jpg 1600w" width=800 height=533 loading=lazy alt="Featured image of post python实现北京公交实时查询"></a></div><div class=article-details><header class=article-category><a href=/categories/python/>Python</a>
-<a href=/categories/python%E5%AE%9E%E8%B7%B5/>Python实践</a></header><h2 class=article-title><a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/>python实现北京公交实时查询</a></h2><h3 class=article-subtitle>一个查询北京公交线路到站情况的python package</h3><footer class=article-time><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--published>Jul 11, 2021</time></footer></div></header><section class=article-content><h1 id=起源>起源</h1><p>我最近在学习python，学的过程中打算完成个小的项目。于是在网络搜索关键词“python入门项目”，在所有的结果中出现了【查询实时公交路线】这个api，个人
-感觉既简单又有些意思。 <del>（谁知这个api最后早就过期了。。这也是开发过程中一个稍显麻烦的地方。）</del></p><p>本文通过一下3个部分介绍实现过程，</p><ol><li>搜索（捡现成的）</li><li>工程结构以及具体实现</li><li>上传到pypi</li></ol><h2 id=搜索>搜索</h2><p>作为python菜鸟，还是像观摩一下前辈们的用法以及产出效果。 开发过程中我主要参考的是
+<!doctype html><html lang=en-us>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="一个查询北京公交线路到站情况的python package"><title>python实现北京公交实时查询</title>
+<link rel=canonical href=http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="python实现北京公交实时查询">
+<meta property="og:description" content="一个查询北京公交线路到站情况的python package">
+<meta property="og:url" content="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/">
+<meta property="og:site_name" content="J-Ariza的点滴">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Python"><meta property="article:tag" content="Python实践"><meta property="article:published_time" content="2021-07-11T00:00:00+00:00"><meta property="article:modified_time" content="2021-07-11T00:00:00+00:00"><meta property="og:image" content="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/bus.jpg">
+<meta name=twitter:title content="python实现北京公交实时查询">
+<meta name=twitter:description content="一个查询北京公交线路到站情况的python package"><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/bus.jpg">
+</head>
+<body class="article-page has-toc">
+<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"auto")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+extended">
+<div id=article-toolbar>
+<a href=http://dev-J-Ariza.github.io/ class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<span>Back</span>
+</a>
+</div>
+<main class="main full-width">
+<article class="has-image main-article">
+<header class=article-header>
+<div class=article-image>
+<a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/>
+<img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/bus_hu0a7e9efd931389e58997a1031c7ec2d4_156522_800x0_resize_q75_box.jpg srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/bus_hu0a7e9efd931389e58997a1031c7ec2d4_156522_800x0_resize_q75_box.jpg 800w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/bus_hu0a7e9efd931389e58997a1031c7ec2d4_156522_1600x0_resize_q75_box.jpg 1600w" width=800 height=533 loading=lazy alt="Featured image of post python实现北京公交实时查询">
+</a>
+</div>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/python/>
+Python
+</a>
+<a href=/categories/python%E5%AE%9E%E8%B7%B5/>
+Python实践
+</a>
+</header>
+<h2 class=article-title>
+<a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/>python实现北京公交实时查询</a>
+</h2>
+<h3 class=article-subtitle>
+一个查询北京公交线路到站情况的python package
+</h3>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Jul 11, 2021</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<h1 id=起源>起源</h1>
+<p>我最近在学习python，学的过程中打算完成个小的项目。于是在网络搜索关键词“python入门项目”，在所有的结果中出现了【查询实时公交路线】这个api，个人
+感觉既简单又有些意思。 <del>（谁知这个api最后早就过期了。。这也是开发过程中一个稍显麻烦的地方。）</del></p>
+<p>本文通过一下3个部分介绍实现过程，</p>
+<ol>
+<li>搜索（捡现成的）</li>
+<li>工程结构以及具体实现</li>
+<li>上传到pypi</li>
+</ol>
+<h2 id=搜索>搜索</h2>
+<p>作为python菜鸟，还是像观摩一下前辈们的用法以及产出效果。 开发过程中我主要参考的是
 <a class=link href=https://segmentfault.com/a/1190000014324320 target=_blank rel=noopener>Python实现命令行监控北京实时公交之一</a>。
-此文涉及到网络请求，结果缓存（这个我没想到，而且作者实现的方式也很简洁），结果输出（对命令行的排版），可以看到内容还是很丰富的。</p><p>前面说到之前网上搜索的api不能用了，于是就开始了各种尝试，先去了各大免费api平台看有无现成的，结果自然是没有。要么就是一个小网站还要注册，还不保险。
+此文涉及到网络请求，结果缓存（这个我没想到，而且作者实现的方式也很简洁），结果输出（对命令行的排版），可以看到内容还是很丰富的。</p>
+<p>前面说到之前网上搜索的api不能用了，于是就开始了各种尝试，先去了各大免费api平台看有无现成的，结果自然是没有。要么就是一个小网站还要注册，还不保险。
 最后是在github上面检索到的，输入关键字 ‘beijing bus’， 并且按照 <strong>时间倒叙查找</strong>， 终于找到了某位大佬的小作业，里面还有请求实时公交的过程，
 我试了一下，疗效不错。 链接在此，
-<a class=link href=https://github.com/Zoutianjian/Beijing_Bus_realtime_query target=_blank rel=noopener>Zoutianjian/Beijing_Bus_realtime_query</a></p><h2 id=工程结构以及具体实现>工程结构以及具体实现</h2><h3 id=项目结构>项目结构</h3><p>为了开发的规范性，写代码之前要设计好项目结构。对python项目来说，这个也是有规范可以依据的。
+<a class=link href=https://github.com/Zoutianjian/Beijing_Bus_realtime_query target=_blank rel=noopener>Zoutianjian/Beijing_Bus_realtime_query</a></p>
+<h2 id=工程结构以及具体实现>工程结构以及具体实现</h2>
+<h3 id=项目结构>项目结构</h3>
+<p>为了开发的规范性，写代码之前要设计好项目结构。对python项目来说，这个也是有规范可以依据的。
 <a class=link href=https://cloud.tencent.com/developer/article/1175298 target=_blank rel=noopener>python 软件目录结构规范</a>.
-简单来说，最外层目录是项目根目录用项目命名，在它下面建立一个同名文件夹，真正的开发代码放在这里面。</p><p>同级建立tests目录，存放单元测试代码。</p><p>同级建立 requirements.txt 里面写入所有你用到的第三方包，这样当别人clone你的项目运行时，只需要 <code>pip install -r requirements.txt</code> 就可以
-安装所有需要的包了。</p><p>如果打算上传到pypi，则需要setup.py</p><p>如果用到流水线，则在项目根目录根据各种CI的要求放置配置文件，我这里用的是 .travis.yml. (这个后面也许会单独写个文章简述流水线配置，真的太烦了，
-我项目一半以上的提交用来配置流水线了。。)</p><pre><code>Foo(根目录，git目录)/ 
+简单来说，最外层目录是项目根目录用项目命名，在它下面建立一个同名文件夹，真正的开发代码放在这里面。</p>
+<p>同级建立tests目录，存放单元测试代码。</p>
+<p>同级建立 requirements.txt 里面写入所有你用到的第三方包，这样当别人clone你的项目运行时，只需要 <code>pip install -r requirements.txt</code> 就可以
+安装所有需要的包了。</p>
+<p>如果打算上传到pypi，则需要setup.py</p>
+<p>如果用到流水线，则在项目根目录根据各种CI的要求放置配置文件，我这里用的是 .travis.yml. (这个后面也许会单独写个文章简述流水线配置，真的太烦了，
+我项目一半以上的提交用来配置流水线了。。)</p>
+<pre><code>Foo(根目录，git目录)/ 
 |
 |-- foo(项目源码)/
 |   |
@@ -28,17 +97,203 @@ extended"><div id=article-toolbar><a href=http://dev-J-Ariza.github.io/ class=ba
 |-- setup.py
 |-- requirements.txt
 |-- README.md
-</code></pre><p>最后类似长这个样子。</p><h3 id=项目核心代码>项目核心代码</h3><p>首先明确需求，当用户输入某条线路代码时，列出双向所有的站点。 如果用户进一步确认了方向，则显示这路车在这个方向上的所有车的到站情况。
-这样需要做的事情就明确了，</p><ul><li>需要请求网络部分，用来查找公交的具体情况。</li><li>需要缓存部分，如果用户输入间隔时间较短，就不必在请求网络。</li><li>需要一个对用户友好的输入输出界面，命令行也能做到。</li></ul><ol><li>网络请求</li></ol><p><figure style=flex-grow:597;flex-basis:1434px><a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615.png data-size=1423x238><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615_hu37807bfab18d2b33c7a4f98f374825a9_37698_480x0_resize_box_2.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615_hu37807bfab18d2b33c7a4f98f374825a9_37698_1024x0_resize_box_2.png 1024w" width=1423 height=238 loading=lazy alt=所有用到的接口></a><figcaption>所有用到的接口</figcaption></figure></p><p>MAIN_URL1 用来获取北京市所有的公交线路。 返回的结果并不是json类型的，所以使用正则表达式<code>&lt;a href="javascript:;">(\\d+)&lt;/a></code>来提取。<figure style=flex-grow:406;flex-basis:974px><a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830.png data-size=1218x300><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830_hu7997d9c266ced89cb17cc7b79f7758e3_29723_480x0_resize_box_2.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830_hu7997d9c266ced89cb17cc7b79f7758e3_29723_1024x0_resize_box_2.png 1024w" width=1218 height=300 loading=lazy alt=请求所有线路></a><figcaption>请求所有线路</figcaption></figure></p><p>最后保存的结果如下图所示<figure style=flex-grow:104;flex-basis:249px><a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046.png data-size=594x571><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046_hu7118cfc31e2ba4c649da3adf24fed982_14054_480x0_resize_box_2.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046_hu7118cfc31e2ba4c649da3adf24fed982_14054_1024x0_resize_box_2.png 1024w" width=594 height=571 loading=lazy alt=bus.txt></a><figcaption>bus.txt</figcaption></figure></p><hr><p>LINE_URL 用来获取某条路线的所有站点。 但是在请求网络之前，我们先判断用户对同一线路的请求间隔是否在24h以内，如果是，那么就从缓存中取出站点信息。<figure style=flex-grow:353;flex-basis:848px><a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205.png data-size=1007x285><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205_hu0470b50709489b5b09a96e819d18b698_25831_480x0_resize_box_2.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205_hu0470b50709489b5b09a96e819d18b698_25831_1024x0_resize_box_2.png 1024w" width=1007 height=285 loading=lazy alt=读取缓存></a><figcaption>读取缓存</figcaption></figure></p><p>这个接口返回的数据是json类型，直接使用python自带的json包进行解析即可，这里注意，要保存住<code>lineid</code>, <code>linename</code>等关键信息，因为后面的实时查询接口要用到。<figure style=flex-grow:399;flex-basis:957px><a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709.png data-size=1265x317><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709_hu03fe7d7569fa5113185ef7701f7d4846_36409_480x0_resize_box_2.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709_hu03fe7d7569fa5113185ef7701f7d4846_36409_1024x0_resize_box_2.png 1024w" width=1265 height=317 loading=lazy alt=获取站点信息></a><figcaption>获取站点信息</figcaption></figure></p><hr><p>接下来就是让用户输入方向，最后输出这个方向上的所有站点并保存。 这里用到了 STATION_URL，这个接口是需要传入请求参数的。<figure style=flex-grow:344;flex-basis:827px><a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850.png data-size=1024x297><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850_hua6de685b1456931db90217e7da11c473_28752_480x0_resize_box_2.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850_hua6de685b1456931db90217e7da11c473_28752_1024x0_resize_box_2.png 1024w" width=1024 height=297 loading=lazy alt=获取单向站点信息></a><figcaption>获取单向站点信息</figcaption></figure></p><p>最终保存的结果如下，<figure style=flex-grow:90;flex-basis:216px><a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011.png data-size=929x1029><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011_hu9e3ba0f3e85e2a5fa7dc16a44b98e977_57833_480x0_resize_box_2.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011_hu9e3ba0f3e85e2a5fa7dc16a44b98e977_57833_1024x0_resize_box_2.png 1024w" width=929 height=1029 loading=lazy alt=all_station.txt></a><figcaption>all_station.txt</figcaption></figure>其中，time字段是保存时间用来判断是否读缓存； line_ids是这条路线双向的路线编码； data里面保存的就是某条方向中的站点列表，每个站点实体都需要记录
-<code>stationId</code>, <code>stopNumber</code> 信息，同样是为了后续的实时查询使用</p><hr><p>最后，REAL_TIME_URL 负责查看某条公交线路的实时情况。</p><p>这个接口的请求参数需要token，打开 <a href="http://www.bjbus.com/home/fun_rtbus.php?uSec=00000160&uSub=00000162">http://www.bjbus.com/home/fun_rtbus.php?uSec=00000160&uSub=00000162</a><br>可以通过F12或者抓包等各种方法得到。 为了输出所有正在运行中的公交，我们将待查询的站点硬编码为这个方向上的最后一站，这样在这个
-接口的返回结果里面，就会包括前面各站的到站信息，也就是是否有车在周围。<figure style=flex-grow:169;flex-basis:407px><a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927.png data-size=1302x767><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927_hu37d0985520172e708c48b0e1a988fe9d_79421_480x0_resize_box_2.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927_hu37d0985520172e708c48b0e1a988fe9d_79421_1024x0_resize_box_2.png 1024w" width=1302 height=767 loading=lazy alt=实时公交请求方法></a><figcaption>实时公交请求方法</figcaption></figure></p><h3 id=命令行输出结果>命令行输出结果</h3><p>命令行的结果也是可以有颜色的！ 我们引入 colorama 这个包，来上色。 其中红色的站点表示此站有车，如果你不在的话就会错过。<figure style=flex-grow:102;flex-basis:247px><a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus.png data-size=689x669><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus_hue39bfa88bbbeb89743d398e519e74bd5_18249_480x0_resize_box_2.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus_hue39bfa88bbbeb89743d398e519e74bd5_18249_1024x0_resize_box_2.png 1024w" width=689 height=669 loading=lazy alt=效果图1></a><figcaption>效果图1</figcaption></figure></p><p>另外，python也可以输出程序中定义好的__doc__. 可以看一下项目源码。</p><h2 id=打包上传到pypi>打包上传到pypi</h2><p>这一步的产出结果可以让所有python开发者都可以使用你的代码，只需要进行标准的pip install.</p><p>上传也是通过python命令行进行的，因此需要做一些准备工作。具体可以搜索一下。
+</code></pre>
+<p>最后类似长这个样子。</p>
+<h3 id=项目核心代码>项目核心代码</h3>
+<p>首先明确需求，当用户输入某条线路代码时，列出双向所有的站点。 如果用户进一步确认了方向，则显示这路车在这个方向上的所有车的到站情况。
+这样需要做的事情就明确了，</p>
+<ul>
+<li>需要请求网络部分，用来查找公交的具体情况。</li>
+<li>需要缓存部分，如果用户输入间隔时间较短，就不必在请求网络。</li>
+<li>需要一个对用户友好的输入输出界面，命令行也能做到。</li>
+</ul>
+<ol>
+<li>网络请求</li>
+</ol>
+<p><figure style=flex-grow:597;flex-basis:1434px>
+<a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615.png data-size=1423x238><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615_hu37807bfab18d2b33c7a4f98f374825a9_37698_480x0_resize_box_3.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615_hu37807bfab18d2b33c7a4f98f374825a9_37698_1024x0_resize_box_3.png 1024w" width=1423 height=238 loading=lazy alt=所有用到的接口>
+</a>
+<figcaption>所有用到的接口</figcaption>
+</figure></p>
+<p>MAIN_URL1 用来获取北京市所有的公交线路。 返回的结果并不是json类型的，所以使用正则表达式<code>&lt;a href="javascript:;">(\\d+)&lt;/a></code>来提取。
+<figure style=flex-grow:406;flex-basis:974px>
+<a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830.png data-size=1218x300><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830_hu7997d9c266ced89cb17cc7b79f7758e3_29723_480x0_resize_box_3.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830_hu7997d9c266ced89cb17cc7b79f7758e3_29723_1024x0_resize_box_3.png 1024w" width=1218 height=300 loading=lazy alt=请求所有线路>
+</a>
+<figcaption>请求所有线路</figcaption>
+</figure></p>
+<p>最后保存的结果如下图所示
+<figure style=flex-grow:104;flex-basis:249px>
+<a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046.png data-size=594x571><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046_hu7118cfc31e2ba4c649da3adf24fed982_14054_480x0_resize_box_3.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046_hu7118cfc31e2ba4c649da3adf24fed982_14054_1024x0_resize_box_3.png 1024w" width=594 height=571 loading=lazy alt=bus.txt>
+</a>
+<figcaption>bus.txt</figcaption>
+</figure></p>
+<hr>
+<p>LINE_URL 用来获取某条路线的所有站点。 但是在请求网络之前，我们先判断用户对同一线路的请求间隔是否在24h以内，如果是，那么就从缓存中取出站点信息。
+<figure style=flex-grow:353;flex-basis:848px>
+<a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205.png data-size=1007x285><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205_hu0470b50709489b5b09a96e819d18b698_25831_480x0_resize_box_3.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205_hu0470b50709489b5b09a96e819d18b698_25831_1024x0_resize_box_3.png 1024w" width=1007 height=285 loading=lazy alt=读取缓存>
+</a>
+<figcaption>读取缓存</figcaption>
+</figure></p>
+<p>这个接口返回的数据是json类型，直接使用python自带的json包进行解析即可，这里注意，要保存住<code>lineid</code>, <code>linename</code>等关键信息，因为后面的实时查询接口要用到。
+<figure style=flex-grow:399;flex-basis:957px>
+<a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709.png data-size=1265x317><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709_hu03fe7d7569fa5113185ef7701f7d4846_36409_480x0_resize_box_3.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709_hu03fe7d7569fa5113185ef7701f7d4846_36409_1024x0_resize_box_3.png 1024w" width=1265 height=317 loading=lazy alt=获取站点信息>
+</a>
+<figcaption>获取站点信息</figcaption>
+</figure></p>
+<hr>
+<p>接下来就是让用户输入方向，最后输出这个方向上的所有站点并保存。 这里用到了 STATION_URL，这个接口是需要传入请求参数的。
+<figure style=flex-grow:344;flex-basis:827px>
+<a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850.png data-size=1024x297><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850_hua6de685b1456931db90217e7da11c473_28752_480x0_resize_box_3.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850_hua6de685b1456931db90217e7da11c473_28752_1024x0_resize_box_3.png 1024w" width=1024 height=297 loading=lazy alt=获取单向站点信息>
+</a>
+<figcaption>获取单向站点信息</figcaption>
+</figure></p>
+<p>最终保存的结果如下，
+<figure style=flex-grow:90;flex-basis:216px>
+<a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011.png data-size=929x1029><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011_hu9e3ba0f3e85e2a5fa7dc16a44b98e977_57833_480x0_resize_box_3.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011_hu9e3ba0f3e85e2a5fa7dc16a44b98e977_57833_1024x0_resize_box_3.png 1024w" width=929 height=1029 loading=lazy alt=all_station.txt>
+</a>
+<figcaption>all_station.txt</figcaption>
+</figure>
+其中，time字段是保存时间用来判断是否读缓存； line_ids是这条路线双向的路线编码； data里面保存的就是某条方向中的站点列表，每个站点实体都需要记录
+<code>stationId</code>, <code>stopNumber</code> 信息，同样是为了后续的实时查询使用</p>
+<hr>
+<p>最后，REAL_TIME_URL 负责查看某条公交线路的实时情况。</p>
+<p>这个接口的请求参数需要token，打开 <a class=link href="http://www.bjbus.com/home/fun_rtbus.php?uSec=00000160&uSub=00000162" target=_blank rel=noopener>http://www.bjbus.com/home/fun_rtbus.php?uSec=00000160&uSub=00000162</a><br>
+可以通过F12或者抓包等各种方法得到。 为了输出所有正在运行中的公交，我们将待查询的站点硬编码为这个方向上的最后一站，这样在这个
+接口的返回结果里面，就会包括前面各站的到站信息，也就是是否有车在周围。
+<figure style=flex-grow:169;flex-basis:407px>
+<a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927.png data-size=1302x767><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927_hu37d0985520172e708c48b0e1a988fe9d_79421_480x0_resize_box_3.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927_hu37d0985520172e708c48b0e1a988fe9d_79421_1024x0_resize_box_3.png 1024w" width=1302 height=767 loading=lazy alt=实时公交请求方法>
+</a>
+<figcaption>实时公交请求方法</figcaption>
+</figure></p>
+<h3 id=命令行输出结果>命令行输出结果</h3>
+<p>命令行的结果也是可以有颜色的！ 我们引入 colorama 这个包，来上色。 其中红色的站点表示此站有车，如果你不在的话就会错过。
+<figure style=flex-grow:102;flex-basis:247px>
+<a href=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus.png data-size=689x669><img src=/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus.png srcset="/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus_hue39bfa88bbbeb89743d398e519e74bd5_18249_480x0_resize_box_3.png 480w, /p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus_hue39bfa88bbbeb89743d398e519e74bd5_18249_1024x0_resize_box_3.png 1024w" width=689 height=669 loading=lazy alt=效果图1>
+</a>
+<figcaption>效果图1</figcaption>
+</figure></p>
+<p>另外，python也可以输出程序中定义好的__doc__. 可以看一下项目源码。</p>
+<h2 id=打包上传到pypi>打包上传到pypi</h2>
+<p>这一步的产出结果可以让所有python开发者都可以使用你的代码，只需要进行标准的pip install.</p>
+<p>上传也是通过python命令行进行的，因此需要做一些准备工作。具体可以搜索一下。
 我在这一步遇到了一些问题，就是项目中的txt文件传不上去。 折腾了半天，在StackOverflow上面找到了答案。 在 MANIFEST.in 文件里面写入你需要的txt，
-并且在 setup.py 中， include_package_data=True。</p><p>希望大家这一步会很顺利。</p><h2 id=使用>使用</h2><ol><li><p>在命令行中 <code>pip install moniter-bus-peking</code></p></li><li><p>在项目里面， <code>from moniter_bus import bus</code></p></li><li><p>查找公交站点 <code>bus.get_station(509)</code> 509可以换成其他路线。</p><p>查找实时公交 <code>bus.get_real_time_bus(509)</code></p></li></ol><p>直接在命令行中按照提示输入方向，就可以看到结果。</p><h1 id=结尾>结尾</h1><p>欢迎 pip install.</p><p>欢迎到repo里面提issue， <a class=link href=https://github.com/dev-J-Ariza/moniter_bus target=_blank rel=noopener>项目源码</a></p><p>感谢开源世界，
-<a class=link href=https://segmentfault.com/a/1190000014324320 target=_blank rel=noopener>Python实现命令行监控北京实时公交之一</a></p><p><a class=link href=https://github.com/Zoutianjian/Beijing_Bus_realtime_query target=_blank rel=noopener>Zoutianjian/Beijing_Bus_realtime_query</a></p><p></p></section><footer class=article-footer><section class=article-tags><a href=/tags/python/>Python</a>
-<a href=/tags/python%E5%AE%9E%E8%B7%B5/>Python实践</a></section><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg><span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-contents--wrapper></aside><div class=disqus-container><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//hugo-theme-stack.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div><style>.disqus-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}</style><script>window.addEventListener('onColorSchemeChange',a=>{DISQUS&&DISQUS.reset({reload:!0})})</script><footer class=site-footer><section class=copyright>&copy;
+并且在 setup.py 中， include_package_data=True。</p>
+<p>希望大家这一步会很顺利。</p>
+<h2 id=使用>使用</h2>
+<ol>
+<li>
+<p>在命令行中 <code>pip install moniter-bus-peking</code></p>
+</li>
+<li>
+<p>在项目里面， <code>from moniter_bus import bus</code></p>
+</li>
+<li>
+<p>查找公交站点 <code>bus.get_station(509)</code> 509可以换成其他路线。</p>
+<p>查找实时公交 <code>bus.get_real_time_bus(509)</code></p>
+</li>
+</ol>
+<p>直接在命令行中按照提示输入方向，就可以看到结果。</p>
+<h1 id=结尾>结尾</h1>
+<p>欢迎 pip install.</p>
+<p>欢迎到repo里面提issue， <a class=link href=https://github.com/dev-J-Ariza/moniter_bus target=_blank rel=noopener>项目源码</a></p>
+<p>感谢开源世界，
+<a class=link href=https://segmentfault.com/a/1190000014324320 target=_blank rel=noopener>Python实现命令行监控北京实时公交之一</a></p>
+<p><a class=link href=https://github.com/Zoutianjian/Beijing_Bus_realtime_query target=_blank rel=noopener>Zoutianjian/Beijing_Bus_realtime_query</a></p>
+<p></p>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/python/>Python</a>
+<a href=/tags/python%E5%AE%9E%E8%B7%B5/>Python实践</a>
+</section>
+<section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+</aside>
+<div class=disqus-container>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//hugo-theme-stack.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</div>
+<style>.disqus-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}</style>
+<script>window.addEventListener('onColorSchemeChange',a=>{DISQUS&&DISQUS.reset({reload:!0})})</script>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
 2020 -
-2021 J-Ariza的点滴</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=2.5.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+2021 J-Ariza的点滴
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=2.5.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 <button class="pswp__button pswp__button--share" title=Share></button>
 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous></main><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">Table of contents</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#搜索>搜索</a></li><li><a href=#工程结构以及具体实现>工程结构以及具体实现</a><ol><li><a href=#项目结构>项目结构</a></li><li><a href=#项目核心代码>项目核心代码</a></li><li><a href=#命令行输出结果>命令行输出结果</a></li></ol></li><li><a href=#打包上传到pypi>打包上传到pypi</a></li><li><a href=#使用>使用</a></li></ol></nav></div></section></aside></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script><script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script></body></html>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+<aside class="sidebar right-sidebar sticky">
+<section class="widget archives">
+<div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg>
+</div>
+<h2 class="widget-title section-title">Table of contents</h2>
+<div class=widget--toc>
+<nav id=TableOfContents>
+<ol>
+<li><a href=#搜索>搜索</a></li>
+<li><a href=#工程结构以及具体实现>工程结构以及具体实现</a>
+<ol>
+<li><a href=#项目结构>项目结构</a></li>
+<li><a href=#项目核心代码>项目核心代码</a></li>
+<li><a href=#命令行输出结果>命令行输出结果</a></li>
+</ol>
+</li>
+<li><a href=#打包上传到pypi>打包上传到pypi</a></li>
+<li><a href=#使用>使用</a></li>
+</ol>
+</nav>
+</div>
+</section>
+</aside>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>
