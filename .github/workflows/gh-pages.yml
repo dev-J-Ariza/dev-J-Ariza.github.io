@@ -14,9 +14,9 @@ jobs:
         env:
           GOOGLE_AID: ${{ secrets.GOOGLE_AID }}
         run: echo ${{ secrets.GOOGLE_AID }}
+             git submodule update --force --recursive --init --remote
 
       - uses: actions/checkout@v2
-        run: git submodule update --force --recursive --init --remote
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
@@ -26,9 +26,6 @@ jobs:
         with:
           hugo-version: '0.88.0'
           extended: true
-
-      - name: Debug
-        run: hugo version
 
       - name: Build
         run: hugo --minify
