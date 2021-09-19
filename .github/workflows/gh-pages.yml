@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: create
+        run: yarn test --ci --silent --testPathIgnorePatterns=experimental
         env:
           GOOGLE_AID: ${{ secrets.GOOGLE_AID }}
 
