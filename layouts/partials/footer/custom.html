@@ -1,5 +1,6 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 {% assign gid = process.env.GOOGLE_AID %}
+var gid = process.env.GOOGLE_AID
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ gid }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
