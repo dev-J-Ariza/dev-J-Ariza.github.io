@@ -13,7 +13,7 @@ jobs:
       - name: create
         env:
           GOOGLE_AID: ${{ secrets.GOOGLE_AID }}
-        run: git submodule update --force --recursive --init --remote
+        run: echo $GOOGLE_AID
 
       - uses: actions/checkout@v2
         with:
