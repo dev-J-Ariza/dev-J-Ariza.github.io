@@ -10,6 +10,10 @@ jobs:
   deploy:
     runs-on: ubuntu-20.04
     steps:
+        - name: create
+          env:
+            GOOGLE_AID: ${{ secrets.GOOGLE_AID }}
+
       - uses: actions/checkout@v2
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
