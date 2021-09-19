@@ -7,5 +7,5 @@ var gid = process.env.GOOGLE_AID
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', {{ - .Site.Params.googleAnalytics - }});
+  gtag('config', {{ .Site.Params.googleAnalytics }});
 </script>
