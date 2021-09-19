@@ -120,33 +120,51 @@ Android.Canvas提供了各种drawXX()方法，用户还可以自己去画出各�
 &lt;ol>
 &lt;li>网络请求&lt;/li>
 &lt;/ol>
-&lt;p>&lt;figure style="flex-grow: 597; flex-basis: 1434px">
-&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615.png" data-size="1423x238">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615_hu37807bfab18d2b33c7a4f98f374825a9_37698_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615_hu37807bfab18d2b33c7a4f98f374825a9_37698_1024x0_resize_box_3.png 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 597;
+flex-basis: 1434px"
+>
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615.png" data-size="1423x238">
+&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615.png"
 width="1423"
 height="238"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615_hu37807bfab18d2b33c7a4f98f374825a9_37698_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_214615_hu37807bfab18d2b33c7a4f98f374825a9_37698_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="所有用到的接口">
 &lt;/a>
 &lt;figcaption>所有用到的接口&lt;/figcaption>
 &lt;/figure>&lt;/p>
 &lt;p>MAIN_URL1 用来获取北京市所有的公交线路。 返回的结果并不是json类型的，所以使用正则表达式&lt;code>&amp;lt;a href=&amp;quot;javascript:;&amp;quot;&amp;gt;(\\d+)&amp;lt;/a&amp;gt;&lt;/code>来提取。
-&lt;figure style="flex-grow: 406; flex-basis: 974px">
-&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830.png" data-size="1218x300">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830_hu7997d9c266ced89cb17cc7b79f7758e3_29723_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830_hu7997d9c266ced89cb17cc7b79f7758e3_29723_1024x0_resize_box_3.png 1024w"
+&lt;figure
+class="gallery-image"
+style="
+flex-grow: 406;
+flex-basis: 974px"
+>
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830.png" data-size="1218x300">
+&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830.png"
 width="1218"
 height="300"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830_hu7997d9c266ced89cb17cc7b79f7758e3_29723_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_215830_hu7997d9c266ced89cb17cc7b79f7758e3_29723_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="请求所有线路">
 &lt;/a>
 &lt;figcaption>请求所有线路&lt;/figcaption>
 &lt;/figure>&lt;/p>
 &lt;p>最后保存的结果如下图所示
-&lt;figure style="flex-grow: 104; flex-basis: 249px">
-&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046.png" data-size="594x571">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046_hu7118cfc31e2ba4c649da3adf24fed982_14054_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046_hu7118cfc31e2ba4c649da3adf24fed982_14054_1024x0_resize_box_3.png 1024w"
+&lt;figure
+class="gallery-image"
+style="
+flex-grow: 104;
+flex-basis: 249px"
+>
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046.png" data-size="594x571">
+&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046.png"
 width="594"
 height="571"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046_hu7118cfc31e2ba4c649da3adf24fed982_14054_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220046_hu7118cfc31e2ba4c649da3adf24fed982_14054_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="bus.txt">
 &lt;/a>
@@ -154,22 +172,34 @@ alt="bus.txt">
 &lt;/figure>&lt;/p>
 &lt;hr>
 &lt;p>LINE_URL 用来获取某条路线的所有站点。 但是在请求网络之前，我们先判断用户对同一线路的请求间隔是否在24h以内，如果是，那么就从缓存中取出站点信息。
-&lt;figure style="flex-grow: 353; flex-basis: 848px">
-&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205.png" data-size="1007x285">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205_hu0470b50709489b5b09a96e819d18b698_25831_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205_hu0470b50709489b5b09a96e819d18b698_25831_1024x0_resize_box_3.png 1024w"
+&lt;figure
+class="gallery-image"
+style="
+flex-grow: 353;
+flex-basis: 848px"
+>
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205.png" data-size="1007x285">
+&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205.png"
 width="1007"
 height="285"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205_hu0470b50709489b5b09a96e819d18b698_25831_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220205_hu0470b50709489b5b09a96e819d18b698_25831_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="读取缓存">
 &lt;/a>
 &lt;figcaption>读取缓存&lt;/figcaption>
 &lt;/figure>&lt;/p>
 &lt;p>这个接口返回的数据是json类型，直接使用python自带的json包进行解析即可，这里注意，要保存住&lt;code>lineid&lt;/code>, &lt;code>linename&lt;/code>等关键信息，因为后面的实时查询接口要用到。
-&lt;figure style="flex-grow: 399; flex-basis: 957px">
-&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709.png" data-size="1265x317">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709_hu03fe7d7569fa5113185ef7701f7d4846_36409_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709_hu03fe7d7569fa5113185ef7701f7d4846_36409_1024x0_resize_box_3.png 1024w"
+&lt;figure
+class="gallery-image"
+style="
+flex-grow: 399;
+flex-basis: 957px"
+>
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709.png" data-size="1265x317">
+&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709.png"
 width="1265"
 height="317"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709_hu03fe7d7569fa5113185ef7701f7d4846_36409_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220709_hu03fe7d7569fa5113185ef7701f7d4846_36409_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="获取站点信息">
 &lt;/a>
@@ -177,22 +207,34 @@ alt="获取站点信息">
 &lt;/figure>&lt;/p>
 &lt;hr>
 &lt;p>接下来就是让用户输入方向，最后输出这个方向上的所有站点并保存。 这里用到了 STATION_URL，这个接口是需要传入请求参数的。
-&lt;figure style="flex-grow: 344; flex-basis: 827px">
-&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850.png" data-size="1024x297">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850_hua6de685b1456931db90217e7da11c473_28752_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850_hua6de685b1456931db90217e7da11c473_28752_1024x0_resize_box_3.png 1024w"
+&lt;figure
+class="gallery-image"
+style="
+flex-grow: 344;
+flex-basis: 827px"
+>
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850.png" data-size="1024x297">
+&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850.png"
 width="1024"
 height="297"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850_hua6de685b1456931db90217e7da11c473_28752_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_220850_hua6de685b1456931db90217e7da11c473_28752_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="获取单向站点信息">
 &lt;/a>
 &lt;figcaption>获取单向站点信息&lt;/figcaption>
 &lt;/figure>&lt;/p>
 &lt;p>最终保存的结果如下，
-&lt;figure style="flex-grow: 90; flex-basis: 216px">
-&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011.png" data-size="929x1029">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011_hu9e3ba0f3e85e2a5fa7dc16a44b98e977_57833_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011_hu9e3ba0f3e85e2a5fa7dc16a44b98e977_57833_1024x0_resize_box_3.png 1024w"
+&lt;figure
+class="gallery-image"
+style="
+flex-grow: 90;
+flex-basis: 216px"
+>
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011.png" data-size="929x1029">
+&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011.png"
 width="929"
 height="1029"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011_hu9e3ba0f3e85e2a5fa7dc16a44b98e977_57833_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221011_hu9e3ba0f3e85e2a5fa7dc16a44b98e977_57833_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="all_station.txt">
 &lt;/a>
@@ -206,11 +248,17 @@ alt="all_station.txt">
 >http://www.bjbus.com/home/fun_rtbus.php?uSec=00000160&amp;uSub=00000162&lt;/a>&lt;br>
 可以通过F12或者抓包等各种方法得到。 为了输出所有正在运行中的公交，我们将待查询的站点硬编码为这个方向上的最后一站，这样在这个
 接口的返回结果里面，就会包括前面各站的到站信息，也就是是否有车在周围。
-&lt;figure style="flex-grow: 169; flex-basis: 407px">
-&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927.png" data-size="1302x767">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927_hu37d0985520172e708c48b0e1a988fe9d_79421_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927_hu37d0985520172e708c48b0e1a988fe9d_79421_1024x0_resize_box_3.png 1024w"
+&lt;figure
+class="gallery-image"
+style="
+flex-grow: 169;
+flex-basis: 407px"
+>
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927.png" data-size="1302x767">
+&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927.png"
 width="1302"
 height="767"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927_hu37d0985520172e708c48b0e1a988fe9d_79421_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/2021-07-17_221927_hu37d0985520172e708c48b0e1a988fe9d_79421_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="实时公交请求方法">
 &lt;/a>
@@ -218,11 +266,17 @@ alt="实时公交请求方法">
 &lt;/figure>&lt;/p>
 &lt;h3 id="命令行输出结果">命令行输出结果&lt;/h3>
 &lt;p>命令行的结果也是可以有颜色的！ 我们引入 colorama 这个包，来上色。 其中红色的站点表示此站有车，如果你不在的话就会错过。
-&lt;figure style="flex-grow: 102; flex-basis: 247px">
-&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus.png" data-size="689x669">&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus.png"
-srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus_hue39bfa88bbbeb89743d398e519e74bd5_18249_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus_hue39bfa88bbbeb89743d398e519e74bd5_18249_1024x0_resize_box_3.png 1024w"
+&lt;figure
+class="gallery-image"
+style="
+flex-grow: 102;
+flex-basis: 247px"
+>
+&lt;a href="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus.png" data-size="689x669">
+&lt;img src="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus.png"
 width="689"
 height="669"
+srcset="http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus_hue39bfa88bbbeb89743d398e519e74bd5_18249_480x0_resize_box_3.png 480w, http://dev-J-Ariza.github.io/p/python%E5%AE%9E%E7%8E%B0%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E5%AE%9E%E6%97%B6%E6%9F%A5%E8%AF%A2/real_time_bus_hue39bfa88bbbeb89743d398e519e74bd5_18249_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="效果图1">
 &lt;/a>
@@ -271,39 +325,63 @@ alt="效果图1">
 >最暖的憂傷 - 田馥甄&lt;/a>&lt;/em>&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="图片">图片&lt;/h2>
-&lt;p>&lt;figure style="flex-grow: 66; flex-basis: 160px">
-&lt;a href="http://dev-J-Ariza.github.io/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash.jpg" data-size="667x1000">&lt;img src="http://dev-J-Ariza.github.io/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash.jpg"
-srcset="http://dev-J-Ariza.github.io/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_480x0_resize_q75_box.jpg 480w, http://dev-J-Ariza.github.io/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 66;
+flex-basis: 160px"
+>
+&lt;a href="http://dev-J-Ariza.github.io/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash.jpg" data-size="667x1000">
+&lt;img src="http://dev-J-Ariza.github.io/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash.jpg"
 width="667"
 height="1000"
+srcset="http://dev-J-Ariza.github.io/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_480x0_resize_q75_box.jpg 480w, http://dev-J-Ariza.github.io/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="Photo by Florian Klauer on Unsplash">
 &lt;/a>
 &lt;figcaption>Photo by Florian Klauer on Unsplash&lt;/figcaption>
-&lt;/figure> &lt;figure style="flex-grow: 149; flex-basis: 359px">
-&lt;a href="http://dev-J-Ariza.github.io/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash.jpg" data-size="1000x667">&lt;img src="http://dev-J-Ariza.github.io/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash.jpg"
-srcset="http://dev-J-Ariza.github.io/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu0a3f1163de68d0b9471979ebf0ecf11e_32400_480x0_resize_q75_box.jpg 480w, http://dev-J-Ariza.github.io/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu0a3f1163de68d0b9471979ebf0ecf11e_32400_1024x0_resize_q75_box.jpg 1024w"
+&lt;/figure> &lt;figure
+class="gallery-image"
+style="
+flex-grow: 149;
+flex-basis: 359px"
+>
+&lt;a href="http://dev-J-Ariza.github.io/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash.jpg" data-size="1000x667">
+&lt;img src="http://dev-J-Ariza.github.io/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash.jpg"
 width="1000"
 height="667"
+srcset="http://dev-J-Ariza.github.io/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu0a3f1163de68d0b9471979ebf0ecf11e_32400_480x0_resize_q75_box.jpg 480w, http://dev-J-Ariza.github.io/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu0a3f1163de68d0b9471979ebf0ecf11e_32400_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="Photo by Luca Bravo on Unsplash">
 &lt;/a>
 &lt;figcaption>Photo by Luca Bravo on Unsplash&lt;/figcaption>
 &lt;/figure>&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 133; flex-basis: 320px">
-&lt;a href="http://dev-J-Ariza.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" data-size="1000x750">&lt;img src="http://dev-J-Ariza.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg"
-srcset="http://dev-J-Ariza.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_480x0_resize_q75_box.jpg 480w, http://dev-J-Ariza.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 133;
+flex-basis: 320px"
+>
+&lt;a href="http://dev-J-Ariza.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" data-size="1000x750">
+&lt;img src="http://dev-J-Ariza.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg"
 width="1000"
 height="750"
+srcset="http://dev-J-Ariza.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_480x0_resize_q75_box.jpg 480w, http://dev-J-Ariza.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="Photo by Helena Hertz on Unsplash">
 &lt;/a>
 &lt;figcaption>Photo by Helena Hertz on Unsplash&lt;/figcaption>
-&lt;/figure> &lt;figure style="flex-grow: 66; flex-basis: 160px">
-&lt;a href="http://dev-J-Ariza.github.io/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash.jpg" data-size="667x1000">&lt;img src="http://dev-J-Ariza.github.io/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash.jpg"
-srcset="http://dev-J-Ariza.github.io/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hub241c2a9c7a2caf7e16a2a5bbc7141ff_18711_480x0_resize_q75_box.jpg 480w, http://dev-J-Ariza.github.io/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hub241c2a9c7a2caf7e16a2a5bbc7141ff_18711_1024x0_resize_q75_box.jpg 1024w"
+&lt;/figure> &lt;figure
+class="gallery-image"
+style="
+flex-grow: 66;
+flex-basis: 160px"
+>
+&lt;a href="http://dev-J-Ariza.github.io/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash.jpg" data-size="667x1000">
+&lt;img src="http://dev-J-Ariza.github.io/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash.jpg"
 width="667"
 height="1000"
+srcset="http://dev-J-Ariza.github.io/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hub241c2a9c7a2caf7e16a2a5bbc7141ff_18711_480x0_resize_q75_box.jpg 480w, http://dev-J-Ariza.github.io/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hub241c2a9c7a2caf7e16a2a5bbc7141ff_18711_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="Photo by Hudai Gayiran on Unsplash">
 &lt;/a>
@@ -514,7 +592,7 @@ cursor: pointer;
 &lt;/style>
 &lt;div class="s_video_simple __h_video">
 &lt;a href="https://vimeo.com/4.8912912e&amp;#43;07" rel="noopener" target="_blank">
-&lt;img src="https://i.vimeocdn.com/video/337401969_640" srcset="https://i.vimeocdn.com/video/337401969_640 1x, https://i.vimeocdn.com/video/337401969_640 2x" alt="Sing Jan Swing - Kinetic Type">
+&lt;img src="https://i.vimeocdn.com/video/337401969-979f0cc9f55fdf305fb8984e90d92639ec9d7ecc4c9dfbc6536e28edb43784ce-d_640" srcset="https://i.vimeocdn.com/video/337401969-979f0cc9f55fdf305fb8984e90d92639ec9d7ecc4c9dfbc6536e28edb43784ce-d_640 1x, https://i.vimeocdn.com/video/337401969-979f0cc9f55fdf305fb8984e90d92639ec9d7ecc4c9dfbc6536e28edb43784ce-d_640 2x" alt="Sing Jan Swing - Kinetic Type">
 &lt;div class="play">&lt;svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 61">&lt;circle cx="30.5" cy="30.5" r="30.5" opacity=".8" fill="#000">&lt;/circle>&lt;path d="M25.3 19.2c-2.1-1.2-3.8-.2-3.8 2.2v18.1c0 2.4 1.7 3.4 3.8 2.2l16.6-9.1c2.1-1.2 2.1-3.2 0-4.4l-16.6-9z" fill="#fff">&lt;/path>&lt;/svg>&lt;/div>&lt;/a>&lt;/div></description></item><item><title>Placeholder Text</title><link>http://dev-J-Ariza.github.io/p/placeholder-text/</link><pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate><guid>http://dev-J-Ariza.github.io/p/placeholder-text/</guid><description>&lt;img src="http://dev-J-Ariza.github.io/p/placeholder-text/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post Placeholder Text" />&lt;p>Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p>
 &lt;p>Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.&lt;/p>
 &lt;ol>
